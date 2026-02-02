@@ -1,19 +1,30 @@
-#include <stdlib.h>
+#include <stdio.h>
 
-int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
-    int* result = (int*)malloc(2 * sizeof(int));
-    
-    for (int i = 0; i < numsSize; i++) {
-        for (int j = i + 1; j < numsSize; j++) {
-            if (nums[i] + nums[j] == target) {
-                result[0] = i;
-                result[1] = j;
-                *returnSize = 2;
-                return result;
-            }
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int pos;
+    scanf("%d", &pos);
+
+    int idx = pos - 1;
+
+    for (int i = idx; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        printf("%d", arr[i]);
+        if (i < n - 2) {
+            printf(" ");
         }
     }
-    
-    *returnSize = 0;
-    return NULL;
+
+    return 0;
 }
