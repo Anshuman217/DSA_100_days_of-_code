@@ -1,3 +1,4 @@
+//Detect cycle in directed graph using DFS and recursion stack.
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
